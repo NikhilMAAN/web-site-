@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spinning Green Cube</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('1234.png'); /* Replace 'background.jpg' with the path to your background image */
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow-y: scroll; /* Add scroll bar */
+    }
+
+    .cube-container {
+        width: 200px;
+        height: 200px;
+        perspective: 300px;
+        position: absolute;
+        left: 200px; /* Adjust as needed */
+        top: 50%; /* Adjust as needed */
+        transform: translateY(-50%); /* Center vertically */
+    }
+
+    .cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: spin 5s infinite linear;
+    }
+
+    .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        border: 2px solid #fff;
+    }
+
+    .front  { transform: rotateY(0deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .right  { transform: rotateY(90deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    @keyframes spin {
+        from { transform: rotateY(0deg); }
+        to { transform: rotateY(360deg); }
+    }
+
+    /* Style for the photo container */
+    .photo-container {
+        position: absolute;
+        right: 20px; /* Adjust as needed */
+        top: 20px; /* Adjust as needed */
+        width: 50%; /* Adjust the width of the container */
+    }
+
+    /* Style for the photos */
+    .photo-container img {
+        width: 100%;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<h1>Spinning Green Cube</h1> <!-- Add title here -->
+<div class="cube-container">
+    <div class="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+</div>
+
+<!-- Photos -->
+<div class="photo-container">
+    <img src="1.jpeg" alt="Photo 1">
+    <img src="2.jpeg" alt="Photo 2">
+    <img src="3.jpeg" alt="Photo 3">
+    <img src="5.jpeg" alt="Photo 5">
+    <img src="6.jpeg" alt="Photo 6">
+    <img src="7.jpeg" alt="Photo 7">
+    <img src="8.jpeg" alt="Photo 8">
+    <img src="9.jpeg" alt="Photo 9">
+    <img src="10.jpeg" alt="Photo 10">
+</div>
+
+</body>
+</html>
+
